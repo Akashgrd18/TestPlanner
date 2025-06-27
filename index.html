@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Link Planner</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f0f4ff, #e6f7ff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin-top: 80px;
+      text-align: center;
+      color: #222;
+    }
+
+    #searchInput {
+      display: block;
+      margin: 40px auto 20px auto;
+      padding: 10px 15px;
+      width: 250px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+     
+    }
+
+    #searchInput:focus {
+      border-color: #0078d7;
+      box-shadow: 0 0 8px rgba(0, 120, 215, 0.3);
+      outline: none;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto 50px auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card {
+      flex: 0 0 180px;
+      height: 120px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      color: #fff;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h3 {
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .link-a { background-color: #3498db; }
+    .link-b { background-color: #2ecc71; }
+    .link-c { background-color: #e67e22; }
+    .link-d { background-color: #9b59b6; }
+    .link-e { background-color: #e74c3c; }
+  </style>
+</head>
+<body>
+
+  <h1>Link Planner</h1>
+  <input type="text" id="searchInput" placeholder="Search" onkeyup="searchLinks()" />
+
+  <div class="container">
+    <a href="linkA_task1.html"><div class="card link-a"><h3>L1.5 Roster</h3></div></a>
+    <a href="linkB_task1.html"><div class="card link-b"><h3>M2 Roster</h3></div></a>
+    <a href="linkC_task1.html"><div class="card link-c"><h3>BAT Handbook</h3></div></a>
+    <a href="linkD_task1.html"><div class="card link-d"><h3>Ageing Report</h3></div></a>
+    <a href="linkE_task1.html"><div class="card link-e"><h3>ADO Handover</h3></div></a>
+    <a href="linkA_task1.html"><div class="card link-a"><h3>L1.5 Roster</h3></div></a>
+    <a href="linkB_task1.html"><div class="card link-b"><h3>M2 Roster</h3></div></a>
+    <a href="linkC_task1.html"><div class="card link-c"><h3>BAT Handbook</h3></div></a>
+    <a href="linkD_task1.html"><div class="card link-d"><h3>Ageing Report</h3></div></a>
+    <a href="linkE_task1.html"><div class="card link-e"><h3>ADO Handover</h3></div></a>
+    <a href="linkA_task1.html"><div class="card link-a"><h3>L1.5 Roster</h3></div></a>
+    <a href="linkB_task1.html"><div class="card link-b"><h3>M2 Roster</h3></div></a>
+    <a href="linkC_task1.html"><div class="card link-c"><h3>BAT Handbook</h3></div></a>
+    <a href="linkD_task1.html"><div class="card link-d"><h3>Ageing Report</h3></div></a>
+    <a href="linkE_task1.html"><div class="card link-e"><h3>ADO Handover</h3></div></a>
+  </div>
+
+  <script>
+    function searchLinks() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(input) ? '' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>
